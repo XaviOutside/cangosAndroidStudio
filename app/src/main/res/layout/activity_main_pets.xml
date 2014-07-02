@@ -1,0 +1,73 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:gravity="top" >
+
+    <Button
+        android:id="@+id/MainPetsButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@layout/activity_main_pets"
+        android:text="@string/ok" />
+
+    <Button
+        android:id="@+id/MainPetsButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/ok" />
+
+    <EditText
+        android:id="@+id/MainPetsField1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/MainPetsButton2"
+        android:layout_marginTop="18dp"
+        android:ems="10"
+        android:hint="@string/MainPetsField1"
+        android:inputType="textPersonName" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/MainPetsField2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/MainPetsField1"
+        android:layout_marginTop="14dp"
+        android:ems="10"
+        android:hint="@string/MainPetsField2"
+        android:inputType="textPostalAddress" />
+
+    <Button
+        android:id="@+id/MainPetsButton3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/ok" />
+
+    <Button
+        android:id="@+id/MainPetsButton4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/MainPetsButton3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/MainPetsButton2"
+        android:text="@string/toUser" />
+
+    <Button
+        android:id="@+id/MainPetsButton5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/MainPetsButton3"
+        android:layout_alignLeft="@+id/MainPetsButton1"
+        android:layout_alignParentRight="true"
+        android:text="@string/toService" />
+
+</RelativeLayout>

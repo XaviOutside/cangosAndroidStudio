@@ -1,0 +1,69 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_action_cut"
+    android:gravity="fill_vertical"
+    tools:ignore="UselessLeaf" >
+
+    <EditText
+        android:id="@+id/MainPetsField2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPostalAddress"
+        android:hint="@string/Campo2"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/editText4" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/Campo3"
+        android:inputType="phone"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/MainPetsField1" />
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/Campo4"
+        android:inputType="textEmailAddress"
+        android:singleLine="true"
+        android:layout_below="@+id/editText3"
+        android:layout_alignParentLeft="true" />
+
+    <EditText
+        android:id="@+id/MainPetsField1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/Campo1"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/addbutton"
+        android:layout_alignParentLeft="true" />
+
+    <ImageButton
+        android:id="@+id/addbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/ok"
+        android:src="@drawable/ic_action_user_add"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true" />
+
+    <ImageButton
+        android:id="@+id/gotopet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/ok"
+        android:src="@drawable/ic_action_refresh"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/addbutton" />
+
+</RelativeLayout>
