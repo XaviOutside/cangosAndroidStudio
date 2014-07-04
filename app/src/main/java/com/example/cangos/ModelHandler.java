@@ -212,7 +212,7 @@ public class ModelHandler extends SQLiteOpenHelper {
         if ( pet.get_data("User_id") == null ) {
             query = "SELECT * FROM Pets WHERE 1=1";
         } else {
-            query = "SELECT * FROM Pets p, UsersPets up WHERE p.Pet_id = up.Pet_id AND up.User_id = " + pet.get_data("User_id");
+            query = "SELECT p.* FROM Pets p, UsersPets up WHERE p.Pet_id = up.Pet_id AND up.User_id = " + pet.get_data("User_id");
         }
     	if ( pet.get_data("Alias") != null ) {
     		query = query + " AND Pet_alias like '%" + pet.get_data("Alias") + "%'";
@@ -230,7 +230,7 @@ public class ModelHandler extends SQLiteOpenHelper {
                 pettemp.add_data("Id",cursor.getString(0));
                 pettemp.add_data("Alias",cursor.getString(1));
                 pettemp.add_data("Age",cursor.getString(2));
-                // Adding contact to list
+                Log.d("searchPet: ","Adding Pets results to the list: " + cursor.getString(0) + cursor.getString(1) + cursor.getString(2));
                 petList.add(pettemp);
             } while (cursor.moveToNext());
         }

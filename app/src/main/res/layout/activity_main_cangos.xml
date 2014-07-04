@@ -3,8 +3,6 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
- 
-    <!-- Editext for Search -->
 
     <EditText
         android:id="@+id/inputSearch"
@@ -16,8 +14,6 @@
         android:layout_toLeftOf="@+id/adduserbutton"
         android:hint="Search products.."
         android:inputType="textVisiblePassword" />
-  
-    <!-- List View -->
 
     <ListView
         android:id="@+id/list_view"

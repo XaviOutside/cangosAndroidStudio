@@ -2,72 +2,73 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:gravity="top" >
-
-    <Button
-        android:id="@+id/MainPetsButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@layout/activity_main_pets"
-        android:text="@string/ok" />
-
-    <Button
-        android:id="@+id/MainPetsButton1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:text="@string/ok" />
+    android:background="@drawable/ic_action_cut"
+    android:gravity="fill_vertical"
+    tools:ignore="UselessLeaf"
+    android:id="@+id/cangos">
 
     <EditText
-        android:id="@+id/MainPetsField1"
+        android:id="@+id/NamePetField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/MainPetsButton2"
-        android:layout_marginTop="18dp"
         android:ems="10"
+        android:inputType="textPostalAddress"
         android:hint="@string/MainPetsField1"
-        android:inputType="textPersonName" >
-
-        <requestFocus />
-    </EditText>
+        android:layout_below="@+id/addbutton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
-        android:id="@+id/MainPetsField2"
+        android:id="@+id/RacePetField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/MainPetsField1"
-        android:layout_marginTop="14dp"
         android:ems="10"
+        android:hint="@string/RacePetString"
+        android:inputType="textEmailAddress"
+        android:singleLine="true"
+        android:layout_below="@+id/WeightPetField"
+        android:layout_alignRight="@+id/cleanfields"
+        android:layout_alignEnd="@+id/cleanfields" />
+
+    <ImageButton
+        android:id="@+id/addbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/ok"
+        android:src="@drawable/ic_action_user_add"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true" />
+
+    <ImageButton
+        android:id="@+id/cleanfields"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/ok"
+        android:src="@drawable/ic_action_refresh"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/addbutton" />
+
+    <EditText
+        android:id="@+id/AgePetField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPostalAddress"
         android:hint="@string/MainPetsField2"
-        android:inputType="textPostalAddress" />
-
-    <Button
-        android:id="@+id/MainPetsButton3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:text="@string/ok" />
-
-    <Button
-        android:id="@+id/MainPetsButton4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/MainPetsButton3"
+        android:layout_below="@+id/NamePetField"
         android:layout_alignParentLeft="true"
-        android:layout_alignRight="@+id/MainPetsButton2"
-        android:text="@string/toUser" />
+        android:layout_alignParentStart="true" />
 
-    <Button
-        android:id="@+id/MainPetsButton5"
+    <EditText
+        android:id="@+id/WeightPetField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/MainPetsButton3"
-        android:layout_alignLeft="@+id/MainPetsButton1"
-        android:layout_alignParentRight="true"
-        android:text="@string/toService" />
+        android:ems="10"
+        android:inputType="textPostalAddress"
+        android:hint="@string/WeightPetString"
+        android:layout_below="@+id/AgePetField"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

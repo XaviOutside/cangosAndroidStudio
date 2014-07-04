@@ -1,6 +1,5 @@
 package com.example.cangos;
 
-import java.util.List;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,7 +14,9 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
-public class ListPets extends Activity {
+import java.util.List;
+
+public class ListServices extends Activity {
 
     ModelHandler db = new ModelHandler(this, "CANGOS", null, 4);
     String[] items=null;
@@ -64,9 +65,9 @@ public class ListPets extends Activity {
 
                     @Override
                     public void onClick(View v) {
-                        Intent MPet = new Intent(ListPets.this, MainPets.class);
+                        Intent MPet = new Intent(ListServices.this, MainPets.class);
                         MPet.putExtra("UserId", pet.get_data("User_id"));
-                        ListPets.this.startActivity(MPet);
+                        ListServices.this.startActivity(MPet);
                     }
                 }
         );
@@ -86,15 +87,15 @@ public class ListPets extends Activity {
     private void show_pet_to_list(ArrayAdapter<String> adapter) {
         ListView petlist = (ListView)findViewById(R.id.listPets);
         petlist.setAdapter(adapter);
-        petlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        petlist.setOnItemClickListener(new OnItemClickListener() {
 
                                             @Override
                                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                                 Log.d("setOnItemClickListener: ", "init");
-                                                Intent MPet = new Intent(ListPets.this, MainPets.class);
+                                                Intent MPet = new Intent(ListServices.this, MainPets.class);
                                                 MPet.putExtra("PetId", pets.get(position).get_data("Id"));
                                                 Log.d("setOnItemClickListener: ","return"+ pets.get(position).get_data("Id"));
-                                                ListPets.this.startActivity(MPet);
+                                                ListServices.this.startActivity(MPet);
                                             }
                                         }
         );

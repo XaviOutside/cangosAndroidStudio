@@ -56,7 +56,7 @@ public class MainUsers extends Activity {
     }
 
     private void clean_field_user() {
-    	EditText txt1 = (EditText)findViewById(R.id.MainPetsField1);
+    	EditText txt1 = (EditText)findViewById(R.id.NamePetField);
         EditText txt2 = (EditText)findViewById(R.id.MainPetsField2);
         EditText txt3 = (EditText)findViewById(R.id.editText3);
         EditText txt4 = (EditText)findViewById(R.id.editText4);
@@ -70,7 +70,7 @@ public class MainUsers extends Activity {
     }
     
     private void set_field_user(Users user) {
-    	EditText txt1 = (EditText)findViewById(R.id.MainPetsField1);
+    	EditText txt1 = (EditText)findViewById(R.id.NamePetField);
         EditText txt2 = (EditText)findViewById(R.id.MainPetsField2);
         EditText txt3 = (EditText)findViewById(R.id.editText3);
         EditText txt4 = (EditText)findViewById(R.id.editText4);
@@ -83,7 +83,7 @@ public class MainUsers extends Activity {
     
     private Users get_field_user() {
     	
-    	EditText txt1 = (EditText)findViewById(R.id.MainPetsField1);
+    	EditText txt1 = (EditText)findViewById(R.id.NamePetField);
         EditText txt2 = (EditText)findViewById(R.id.MainPetsField2);
         EditText txt3 = (EditText)findViewById(R.id.editText3);
         EditText txt4 = (EditText)findViewById(R.id.editText4);

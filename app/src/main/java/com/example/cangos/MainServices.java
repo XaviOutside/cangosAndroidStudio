@@ -6,7 +6,6 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -182,7 +181,7 @@ public class MainServices extends Activity {
     }
 
     private void clean_field_service() {
-    	EditText txt1 = (EditText)findViewById(R.id.MainPetsField1);
+    	EditText txt1 = (EditText)findViewById(R.id.NamePetField);
         EditText txt2 = (EditText)findViewById(R.id.MainPetsField2);
         EditText txt3 = (EditText)findViewById(R.id.editText3);
         EditText txt4 = (EditText)findViewById(R.id.editText4);
@@ -196,7 +195,7 @@ public class MainServices extends Activity {
     }
     
     private void set_field_service(Services service) {
-    	EditText txt1 = (EditText)findViewById(R.id.MainPetsField1);
+    	EditText txt1 = (EditText)findViewById(R.id.NamePetField);
         EditText txt2 = (EditText)findViewById(R.id.MainPetsField2);
         EditText txt3 = (EditText)findViewById(R.id.editText3);
         EditText txt4 = (EditText)findViewById(R.id.editText4);
@@ -209,7 +208,7 @@ public class MainServices extends Activity {
     
     private Services get_field_service() {
     	
-    	EditText txt1 = (EditText)findViewById(R.id.MainPetsField1);
+    	EditText txt1 = (EditText)findViewById(R.id.NamePetField);
         EditText txt2 = (EditText)findViewById(R.id.MainPetsField2);
         EditText txt3 = (EditText)findViewById(R.id.editText3);
         EditText txt4 = (EditText)findViewById(R.id.editText4);

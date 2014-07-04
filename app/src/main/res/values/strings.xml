@@ -1,10 +1,10 @@
 <resources>
-
     <string name="app_name">cangos</string>
     <string name="menu_settings">Settings</string>
-    <string name="title_activity_main_cangos">Cangos</string>
-    <string name="title_activity_main_users">Cliente</string>
-    <string name="title_activity_main_pets">Mascota</string>
+    <string name="title_activity_main_cangos">Listado Usuarios</string>
+    <string name="title_activity_main_users">Añadir Usuario</string>
+    <string name="title_activity_main_pets">Añadir Mascotas</string>
+    <string name="title_activity_list_pets">Listado Mascotas</string>
     <string name="Campo1">Nombre</string>
     <string name="Campo2">Dirección</string>
     <string name="Campo3">Teléfono</string>
@@ -18,5 +18,7 @@
     <string name="toPet">Mascota >></string>
     <string name="toService">Servicio >></string>
     <string name="toUser">Usuario >></string>
-
+    <string name="AgePetString">Edad Mascota</string>
+    <string name="RacePetString">Raza Mascota</string>
+    <string name="WeightPetString">Peso Mascota</string>
 </resources>

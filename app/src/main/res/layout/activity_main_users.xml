@@ -24,7 +24,7 @@
         android:hint="@string/Campo3"
         android:inputType="phone"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/MainPetsField1" />
+        android:layout_below="@+id/NamePetField" />
 
     <EditText
         android:id="@+id/editText4"
@@ -38,7 +38,7 @@
         android:layout_alignParentLeft="true" />
 
     <EditText
-        android:id="@+id/MainPetsField1"
+        android:id="@+id/NamePetField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
