@@ -20,28 +20,28 @@ public class ListServices extends Activity {
 
     ModelHandler db = new ModelHandler(this, "CANGOS", null, 4);
     String[] items=null;
-    Pets pet = new Pets();
-    List<Pets> pets = null;
+    Services service = new Services();
+    List<Services> services = null;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_pets);
+        setContentView(R.layout.activity_main_list_services);
         EditText inputSearch = (EditText) findViewById(R.id.searchPet);
-        ImageButton addpetbutton = (ImageButton) findViewById(R.id.addPet);
+        ImageButton addservicebutton = (ImageButton) findViewById(R.id.addPet);
 
         Bundle extras = getIntent().getExtras();
-        String user_id=null;
+        String pet_id = null;
 
         if (extras != null) {
-            user_id = extras.getString("UserId");
+            pet_id = extras.getString("PetId");
         }
 
-        pet.add_data("User_id",user_id);
-        pets = pet.get_pets(db);
-        items = create_pet_list();
+        service.add_data("Pet_id", pet_id);
+        services = service.get_services(db);
+        items = create_service_list();
         final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_item, R.id.product_name, items);
-        show_pet_to_list(adapter);
+        show_service_to_list(adapter);
 
         inputSearch.addTextChangedListener(new TextWatcher() {
 
@@ -60,42 +60,42 @@ public class ListServices extends Activity {
 
         });
 
-        addpetbutton.setOnClickListener(
+        addservicebutton.setOnClickListener(
                 new View.OnClickListener() {
 
                     @Override
                     public void onClick(View v) {
-                        Intent MPet = new Intent(ListServices.this, MainPets.class);
-                        MPet.putExtra("UserId", pet.get_data("User_id"));
-                        ListServices.this.startActivity(MPet);
+                        Intent MService = new Intent(ListServices.this, MainServices.class);
+                        MService.putExtra("PetId", service.get_data("Pet_id"));
+                        ListServices.this.startActivity(MService);
                     }
                 }
         );
 
     }
 
-    private String[] create_pet_list() {
-        items = new String[this.pets.size()];
+    private String[] create_service_list() {
+        items = new String[this.services.size()];
 
-        for (int i=0; i< this.pets.size(); i++) {
-            items[i] = this.pets.get(i).get_data("Alias") + " " + this.pets.get(i).get_data("Age");
+        for (int i=0; i< this.services.size(); i++) {
+            items[i] = this.services.get(i).get_data("") + " " + this.services.get(i).get_data("");
         }
 
         return items;
     }
 
-    private void show_pet_to_list(ArrayAdapter<String> adapter) {
-        ListView petlist = (ListView)findViewById(R.id.listPets);
-        petlist.setAdapter(adapter);
-        petlist.setOnItemClickListener(new OnItemClickListener() {
+    private void show_service_to_list(ArrayAdapter<String> adapter) {
+        ListView servicelist = (ListView)findViewById(R.id.listPets);
+        servicelist.setAdapter(adapter);
+        servicelist.setOnItemClickListener(new OnItemClickListener() {
 
                                             @Override
                                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                                 Log.d("setOnItemClickListener: ", "init");
-                                                Intent MPet = new Intent(ListServices.this, MainPets.class);
-                                                MPet.putExtra("PetId", pets.get(position).get_data("Id"));
-                                                Log.d("setOnItemClickListener: ","return"+ pets.get(position).get_data("Id"));
-                                                ListServices.this.startActivity(MPet);
+                                                Intent MService = new Intent(ListServices.this, MainServices.class);
+                                                MService.putExtra("PetId", services.get(position).get_data("Id"));
+                                                Log.d("setOnItemClickListener: ","return"+ services.get(position).get_data("Id"));
+                                                ListServices.this.startActivity(MService);
                                             }
                                         }
         );

@@ -5,6 +5,7 @@ package com.example.cangos;
 
 import java.io.Serializable;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 	
 public class Services implements Serializable {
@@ -22,6 +23,9 @@ public class Services implements Serializable {
 	    
     public String get_data(String key) {
     	return this.properties.get(key);
-    }	
+    }
 
+    public List<Services> get_services(ModelHandler db) {
+        return db.searchService(this);
+    }
 }

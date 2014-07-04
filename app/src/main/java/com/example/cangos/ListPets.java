@@ -91,7 +91,7 @@ public class ListPets extends Activity {
                                             @Override
                                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                                 Log.d("setOnItemClickListener: ", "init");
-                                                Intent MPet = new Intent(ListPets.this, MainPets.class);
+                                                Intent MPet = new Intent(ListPets.this, ListServices.class);
                                                 MPet.putExtra("PetId", pets.get(position).get_data("Id"));
                                                 Log.d("setOnItemClickListener: ","return"+ pets.get(position).get_data("Id"));
                                                 ListPets.this.startActivity(MPet);

@@ -23,7 +23,7 @@ public class ModelHandler extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE Users(User_id integer primary key autoincrement,User_name,User_address,User_phone,User_email);");
         db.execSQL("CREATE TABLE Pets(Pet_id integer primary key autoincrement, Pet_alias,Pet_age);");
-        db.execSQL("CREATE TABLE Services(Service_id integer primary key autoincrement,Service_date);");
+        db.execSQL("CREATE TABLE Services(Service_id integer primary key autoincrement, Pet_id integer, Service_date);");
         db.execSQL("CREATE TABLE UsersPets(User_id integer, Pet_id integer);");
     }
  
@@ -280,61 +280,6 @@ public class ModelHandler extends SQLiteOpenHelper {
     	return serviceList;
     }
     
-    // Getting All Contacts
-    public List<Users> getAllUsers() {
-        List<Users> userList = new ArrayList<Users>();
-        // Select All Query
-        String selectQuery = "SELECT  * FROM Users";
- 
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery(selectQuery, null);
- 
-        // looping through all rows and adding to list
-        if (cursor.moveToFirst()) {
-            do {
-                Users user = new Users();
-                user.add_data("Id",cursor.getString(0));
-                user.add_data("Name",cursor.getString(1));
-                user.add_data("Address",cursor.getString(2));
-                user.add_data("Phone",cursor.getString(3));
-                user.add_data("Email",cursor.getString(4));
-                // Adding contact to list
-                userList.add(user);
-            } while (cursor.moveToNext());
-        }
-        cursor.close();
-        db.close();
-        // return contact list
-        return userList;
-    }
- 
-    
-    // Getting All Pets
-    public List<Pets> getAllPets() {
-        List<Pets> petList = new ArrayList<Pets>();
-        // Select All Query
-        String selectQuery = "SELECT  * FROM Pets";
- 
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery(selectQuery, null);
- 
-        // looping through all rows and adding to list
-        if (cursor.moveToFirst()) {
-            do {
-                Pets pet = new Pets();
-                pet.add_data("Id",cursor.getString(0));
-                pet.add_data("Alias",cursor.getString(1));
-                pet.add_data("Age",cursor.getString(2));
-                // Adding contact to list
-                petList.add(pet);
-            } while (cursor.moveToNext());
-        }
-        cursor.close();
-        db.close();
-        // return contact list
-        return petList;
-    }
-    
     // Updating single contact
     public int updateUser(Users user) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -412,40 +357,6 @@ public class ModelHandler extends SQLiteOpenHelper {
         db.delete("Users", null, null);
         db.close();
     	Log.d("deleteBD: ","void");
-    }
- 
-    // Getting contacts Count
-    public int getUsersCount() {
-    	int numero;
-    	
-    	Log.d("getUsersCount: ","init");
-        String countQuery = "SELECT  * FROM Users";
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery(countQuery, null);
-        numero = cursor.getCount();
-        cursor.close();
-        db.close();
-        Log.d("getUsersCount: ","return: " + Integer.toString(numero));
- 
-        // return count
-        return numero;
-    }
-    
-    // Getting contacts Count
-    public int getPetsCount() {
-    	int numero;
-    	
-    	Log.d("getPetsCount: ","init");
-        String countQuery = "SELECT  * FROM Pets";
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery(countQuery, null);
-        numero = cursor.getCount();
-        cursor.close();
-        db.close();
-        Log.d("getPetsCount: ","return: " + Integer.toString(numero));
- 
-        // return count
-        return numero;
     }
     
 }
