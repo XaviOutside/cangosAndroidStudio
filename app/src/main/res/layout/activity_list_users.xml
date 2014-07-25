@@ -3,30 +3,26 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
- 
-    <!-- Editext for Search -->
 
     <EditText
-        android:id="@+id/searchservices"
+        android:id="@+id/inputSearch"
         android:layout_width="242dp"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/adduserbutton"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:hint="Search pets..."
-        android:inputType="textVisiblePassword"
-        android:layout_alignBottom="@+id/addservicebutton"
-        android:layout_toLeftOf="@+id/addservicebutton" />
-  
-    <!-- List View -->
+        android:layout_toLeftOf="@+id/adduserbutton"
+        android:hint="Search products.."
+        android:inputType="textVisiblePassword" />
 
     <ListView
-        android:id="@+id/listservices"
+        android:id="@+id/list_view"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/searchservices" />
+        android:layout_below="@+id/adduserbutton" />
 
     <ImageButton
-        android:id="@+id/addservicebutton"
+        android:id="@+id/adduserbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"

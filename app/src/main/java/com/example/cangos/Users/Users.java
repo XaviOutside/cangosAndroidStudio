@@ -1,19 +1,17 @@
-/* 
- * Version 1
- */
-package com.example.cangos;
+package com.example.cangos.Users;
 
-import java.io.Serializable;
+import com.example.cangos.Common.ModelHandler;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-	
-public class Services implements Serializable {
+import android.content.Context;
 
-	private static final long serialVersionUID = 1L;
+public class Users {
+
 	private Map<String,String> properties;
 
-    public Services() {
+    public Users() {
     	this.properties = new HashMap<String,String>();
     }
 	    
@@ -25,7 +23,4 @@ public class Services implements Serializable {
     	return this.properties.get(key);
     }
 
-    public List<Services> get_services(ModelHandler db) {
-        return db.searchService(this);
-    }
 }

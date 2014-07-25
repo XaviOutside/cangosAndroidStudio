@@ -1,21 +1,26 @@
-package com.example.cangos;
+package com.example.cangos.Common;
 
 import java.util.ArrayList;
 import java.util.List;
-import android.app.Activity;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import com.example.cangos.Pets.Pets;
+import com.example.cangos.Services.Services;
+import com.example.cangos.Users.Users;
+
 public class ModelHandler extends SQLiteOpenHelper {
- 
-    public ModelHandler(Context contexto, String nombre, CursorFactory factory, int version) {
-        //super(context, "CANGOS", null, 4);
-        super(contexto,nombre,factory,version);
+
+    static String nombre = "CANGOS";
+    static Integer version = 4;
+
+    public ModelHandler(Context contexto) {
+        super(contexto, nombre, null, version);
     }
 
 	// Creating Tables
@@ -87,7 +92,7 @@ public class ModelHandler extends SQLiteOpenHelper {
     }
     
     // Getting single contact
-    Users getUser(String id) {
+    public Users getUser(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
  
         String query = "SELECT * FROM Users WHERE User_id = " + id + ";";
@@ -112,7 +117,7 @@ public class ModelHandler extends SQLiteOpenHelper {
         return user;
     }
     
-    Pets getPet(int id) {
+    public Pets getPet(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
  
         String query = "SELECT * FROM Pets WHERE Pet_id = " + id + ";";
@@ -133,7 +138,7 @@ public class ModelHandler extends SQLiteOpenHelper {
         return pet;
     }
 
-    Services getService(int id) {
+    public Services getService(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
  
         String query = "SELECT * FROM Services WHERE Service_id = " + id + ";";
@@ -154,7 +159,7 @@ public class ModelHandler extends SQLiteOpenHelper {
     }
     
     // Find info user
-    List<Users> searchUser(Users user) {
+    public List<Users> searchUser(Users user) {
     	List<Users> userList = new ArrayList<Users>();
     	SQLiteDatabase db = this.getReadableDatabase();
     	String query = null;
@@ -203,7 +208,7 @@ public class ModelHandler extends SQLiteOpenHelper {
     
     
     // Find info pet
-    List<Pets> searchPet(Pets pet) {
+    public List<Pets> searchPet(Pets pet) {
     	List<Pets> petList = new ArrayList<Pets>();
     	SQLiteDatabase db = this.getReadableDatabase();
     	String query = null;
@@ -242,7 +247,7 @@ public class ModelHandler extends SQLiteOpenHelper {
     	return petList;
     }
     
-    List<Services> searchService(Services service) {
+    public List<Services> searchService(Services service) {
     	List<Services> serviceList = new ArrayList<Services>();
     	SQLiteDatabase db = this.getReadableDatabase();
     	String query = null;

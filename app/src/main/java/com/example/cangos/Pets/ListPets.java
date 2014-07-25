@@ -1,6 +1,5 @@
-package com.example.cangos;
+package com.example.cangos.Pets;
 
-import java.util.List;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,15 +8,19 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
+import com.example.cangos.Common.ModelHandler;
+import com.example.cangos.R;
+import com.example.cangos.Services.ListServices;
+
+import java.util.List;
+
 public class ListPets extends Activity {
 
-    ModelHandler db = new ModelHandler(this, "CANGOS", null, 4);
     String[] items=null;
     Pets pet = new Pets();
     List<Pets> pets = null;
@@ -28,6 +31,7 @@ public class ListPets extends Activity {
         setContentView(R.layout.activity_list_pets);
         EditText inputSearch = (EditText) findViewById(R.id.searchPet);
         ImageButton addpetbutton = (ImageButton) findViewById(R.id.addPet);
+        ModelHandler db = new ModelHandler(this);
 
         Bundle extras = getIntent().getExtras();
         String user_id=null;
@@ -37,7 +41,7 @@ public class ListPets extends Activity {
         }
 
         pet.add_data("User_id",user_id);
-        pets = pet.get_pets(db);
+        pets = db.searchPet(pet);
         items = create_pet_list();
         final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_item, R.id.product_name, items);
         show_pet_to_list(adapter);

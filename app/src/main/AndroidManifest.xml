@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainCangos"
+            android:name=".Main.MainCangos"
             android:label="@string/title_activity_main_cangos" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,18 +17,33 @@
         </activity>
         
         <activity
-            android:name=".MainUsers"
+            android:name=".Users.MainUsers"
             android:label="@string/title_activity_main_users" >
         </activity>
-        
+
+        <activity
+            android:name=".Users.ListUsers"
+            android:label="@string/title_activity_main_users" >
+        </activity>
+
         <activity 
-            android:name=".MainPets"
+            android:name=".Pets.MainPets"
             android:label="@string/title_activity_main_pets">
         </activity>
 
         <activity
-            android:name=".ListPets"
+            android:name=".Pets.ListPets"
             android:label="@string/title_activity_list_pets">
+        </activity>
+
+        <activity
+            android:name=".Services.MainServices"
+            android:label="@string/title_activity_main_services">
+        </activity>
+
+        <activity
+            android:name=".Services.ListServices"
+            android:label="@string/title_activity_list_services">
         </activity>
     </application>
 

@@ -21,4 +21,6 @@
     <string name="AgePetString">Edad Mascota</string>
     <string name="RacePetString">Raza Mascota</string>
     <string name="WeightPetString">Peso Mascota</string>
+    <string name="title_activity_list_services">Listado Servicios</string>
+    <string name="title_activity_main_services">Añadir Mascotas</string>
 </resources>

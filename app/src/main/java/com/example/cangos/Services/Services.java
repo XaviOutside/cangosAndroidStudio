@@ -1,17 +1,19 @@
 /* 
  * Version 1
  */
-package com.example.cangos;
+package com.example.cangos.Services;
 
+import com.example.cangos.Common.ModelHandler;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import android.content.Context;
 
-public class Users {
+public class Services {
 
 	private Map<String,String> properties;
 
-    public Users() {
+    public Services() {
     	this.properties = new HashMap<String,String>();
     }
 	    
@@ -23,7 +25,4 @@ public class Users {
     	return this.properties.get(key);
     }
 
-    public List<Users> get_users(ModelHandler db) {
-        return db.searchUser(this);
-    }
 }

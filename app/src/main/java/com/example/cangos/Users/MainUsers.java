@@ -1,4 +1,4 @@
-package com.example.cangos;
+package com.example.cangos.Users;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -8,6 +8,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+
+import com.example.cangos.Main.MainCangos;
+import com.example.cangos.Common.ModelHandler;
+import com.example.cangos.R;
 
 public class MainUsers extends Activity {
 
@@ -19,7 +23,7 @@ public class MainUsers extends Activity {
         setContentView(R.layout.activity_main_users);
         ImageButton adduserbutton = (ImageButton)findViewById(R.id.addbutton);
         ImageButton cleanuserbutton = (ImageButton)findViewById(R.id.gotopet);
-        final ModelHandler db = new ModelHandler(MainUsers.this, "CANGOS", null, 4);
+        final ModelHandler db = new ModelHandler(this);
 
 
         adduserbutton.setOnClickListener(
@@ -37,7 +41,8 @@ public class MainUsers extends Activity {
     			        if (dialog.isShowing()) {
             	            dialog.dismiss();
             	        }
-                        Intent BackMainUserList = new Intent(MainUsers.this, MainCangos.class);
+
+                        Intent BackMainUserList = new Intent(MainUsers.this, ListUsers.class);
                         MainUsers.this.startActivity(BackMainUserList);
         			}
         		}

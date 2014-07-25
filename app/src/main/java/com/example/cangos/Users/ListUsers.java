@@ -1,6 +1,5 @@
-package com.example.cangos;
+package com.example.cangos.Users;
 
-import java.util.List;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,9 +14,13 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
-public class MainCangos extends Activity {
+import com.example.cangos.Common.ModelHandler;
+import com.example.cangos.Pets.ListPets;
+import com.example.cangos.R;
+import java.util.List;
 
-    ModelHandler db = new ModelHandler(this, "CANGOS", null, 4);
+public class ListUsers extends Activity {
+
     String[] items=null;
     Users user = new Users();
     List<Users> users = null;
@@ -25,11 +28,12 @@ public class MainCangos extends Activity {
    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_cangos);
+        setContentView(R.layout.activity_list_users);
         EditText inputSearch = (EditText) findViewById(R.id.inputSearch);
         ImageButton adduserbutton = (ImageButton) findViewById(R.id.adduserbutton);
+        ModelHandler db = new ModelHandler(this);
 
-        users = user.get_users(db);
+        users = db.searchUser(user);
         items = create_user_list();
         final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_item, R.id.product_name, items);
         show_user_to_list(adapter);
@@ -56,8 +60,8 @@ public class MainCangos extends Activity {
     				
     				@Override
     				public void onClick(View v) {
-            				Intent MUsers = new Intent(MainCangos.this, MainUsers.class);
-            		        MainCangos.this.startActivity(MUsers);
+            				Intent MUsers = new Intent(ListUsers.this, MainUsers.class);
+            		        ListUsers.this.startActivity(MUsers);
     				}
     			}
     	);
@@ -82,10 +86,10 @@ public class MainCangos extends Activity {
                                             @Override
                                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                                 Log.d("setOnItemClickListener: ","init");
-                                                Intent MPet = new Intent(MainCangos.this, ListPets.class);
+                                                Intent MPet = new Intent(ListUsers.this, ListPets.class);
                                                 MPet.putExtra("UserId", users.get(position).get_data("Id"));
                                                 Log.d("setOnItemClickListener: ","return"+ users.get(position).get_data("Id"));
-                                                MainCangos.this.startActivity(MPet);
+                                                ListUsers.this.startActivity(MPet);
                                             }
                                         }
         );

@@ -1,4 +1,4 @@
-package com.example.cangos;
+package com.example.cangos.Services;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -14,11 +14,12 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
+import com.example.cangos.Common.ModelHandler;
+import com.example.cangos.R;
 import java.util.List;
 
 public class ListServices extends Activity {
 
-    ModelHandler db = new ModelHandler(this, "CANGOS", null, 4);
     String[] items=null;
     Services service = new Services();
     List<Services> services = null;
@@ -27,8 +28,9 @@ public class ListServices extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_list_services);
-        EditText inputSearch = (EditText) findViewById(R.id.searchPet);
-        ImageButton addservicebutton = (ImageButton) findViewById(R.id.addPet);
+        EditText inputSearch = (EditText)findViewById(R.id.searchservices);
+        ImageButton addservicebutton = (ImageButton)findViewById(R.id.addservicebutton);
+        ModelHandler db = new ModelHandler(this);
 
         Bundle extras = getIntent().getExtras();
         String pet_id = null;
@@ -38,7 +40,7 @@ public class ListServices extends Activity {
         }
 
         service.add_data("Pet_id", pet_id);
-        services = service.get_services(db);
+        services = db.searchService(service);
         items = create_service_list();
         final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_item, R.id.product_name, items);
         show_service_to_list(adapter);
@@ -85,7 +87,7 @@ public class ListServices extends Activity {
     }
 
     private void show_service_to_list(ArrayAdapter<String> adapter) {
-        ListView servicelist = (ListView)findViewById(R.id.listPets);
+        ListView servicelist = (ListView)findViewById(R.id.listservices);
         servicelist.setAdapter(adapter);
         servicelist.setOnItemClickListener(new OnItemClickListener() {
 

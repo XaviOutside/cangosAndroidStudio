@@ -1,4 +1,4 @@
-package com.example.cangos;
+package com.example.cangos.Pets;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -8,6 +8,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+
+import com.example.cangos.Common.ModelHandler;
+import com.example.cangos.R;
+import com.example.cangos.Users.Users;
 
 public class MainPets extends Activity {	
 
@@ -19,7 +23,7 @@ public class MainPets extends Activity {
         setContentView(R.layout.activity_main_pets);
         ImageButton addpetbutton = (ImageButton)findViewById(R.id.addbutton);
         ImageButton cleanpetbutton = (ImageButton)findViewById(R.id.cleanfields);
-        final ModelHandler db = new ModelHandler(MainPets.this, "CANGOS", null, 4);
+        final ModelHandler db = new ModelHandler(this);
 
 
         if ( getdataUser() != null ) {
@@ -44,8 +48,9 @@ public class MainPets extends Activity {
     			        if (dialog.isShowing()) {
             	            dialog.dismiss();
             	        }
-                        Intent BackMainUserList = new Intent(MainPets.this, ListPets.class);
-                        MainPets.this.startActivity(BackMainUserList);
+                        Intent BackMainPetList = new Intent(MainPets.this, ListPets.class);
+                        BackMainPetList.putExtra("UserId", pet.get_data("User_id"));
+                        MainPets.this.startActivity(BackMainPetList);
         			}
         		}
         );

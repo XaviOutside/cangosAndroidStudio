@@ -1,4 +1,4 @@
-package com.example.cangos;
+package com.example.cangos.Services;
 
 import java.util.List;
 
@@ -11,6 +11,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+
+import com.example.cangos.Common.ModelHandler;
+import com.example.cangos.R;
 
 public class MainServices extends Activity {
 
@@ -26,7 +29,7 @@ public class MainServices extends Activity {
         ImageButton editservicebutton = null;
         //ImageButton gotopetservicebutton = null;
         ImageButton cleanservicebutton = null;
-        final ModelHandler db = new ModelHandler(MainServices.this, "CANGOS", null, 4);
+        final ModelHandler db = new ModelHandler(this);
 
         //gotopetuserbutton.setEnabled(false);
 
