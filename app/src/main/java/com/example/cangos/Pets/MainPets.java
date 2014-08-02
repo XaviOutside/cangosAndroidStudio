@@ -25,7 +25,6 @@ public class MainPets extends Activity {
         ImageButton cleanpetbutton = (ImageButton)findViewById(R.id.cleanfields);
         final ModelHandler db = new ModelHandler(this);
 
-
         if ( getdataUser() != null ) {
         	Users user = db.getUser(getdataUser());
             //damos error

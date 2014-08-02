@@ -2,14 +2,12 @@ package com.example.cangos.Common;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-
 import com.example.cangos.Pets.Pets;
 import com.example.cangos.Services.Services;
 import com.example.cangos.Users.Users;
@@ -17,13 +15,12 @@ import com.example.cangos.Users.Users;
 public class ModelHandler extends SQLiteOpenHelper {
 
     static String nombre = "CANGOS";
-    static Integer version = 4;
+    static Integer version = 5;
 
     public ModelHandler(Context contexto) {
         super(contexto, nombre, null, version);
     }
 
-	// Creating Tables
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE Users(User_id integer primary key autoincrement,User_name,User_address,User_phone,User_email);");
@@ -32,15 +29,12 @@ public class ModelHandler extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE UsersPets(User_id integer, Pet_id integer);");
     }
  
-    // Upgrading database
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // Drop older table if existed
         db.execSQL("DROP TABLE IF EXISTS Users;");
         db.execSQL("DROP TABLE IF EXISTS Pets;");
         db.execSQL("DROP TABLE IF EXISTS Services;");
         db.execSQL("DROP TABLE IF EXISTS UsersPets;");
-        // Create tables again
         onCreate(db);
     }
        
@@ -84,10 +78,12 @@ public class ModelHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
      
         ContentValues values = new ContentValues();
-        values.put("Service_date", service.get_data("Date"));
-     
-        // Inserting Row
-        db.insert("Services", null, values);
+        values.put("Service_date", service.get_data("Service_Date"));
+        values.put("Pet_id", service.get_data("Pet_Id"));
+        Log.d("addService: ","Adding Services: " + service.get_data("Service_Date") + service.get_data("Pet_Id"));
+        long id = db.insert("Services", null, values);
+        service.add_data("Id", Long.toString(id));
+        Log.d("addService: ","return: " + id);
         db.close(); // Closing database connection
     }
     
@@ -108,16 +104,13 @@ public class ModelHandler extends SQLiteOpenHelper {
         user.add_data("Address", cursor.getString(2));
         user.add_data("Phone", cursor.getString(3));
         user.add_data("Email", cursor.getString(4));
-        
         Log.d("searchUser: ","Result Query: " + user.get_data("Id"));
-        
         cursor.close();
         db.close();
-        // return contact
         return user;
     }
     
-    public Pets getPet(int id) {
+    public Pets getPet(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
  
         String query = "SELECT * FROM Pets WHERE Pet_id = " + id + ";";
@@ -131,14 +124,13 @@ public class ModelHandler extends SQLiteOpenHelper {
         pet.add_data("Id", (cursor.getString(0)));
         pet.add_data("Name", (cursor.getString(1)));
         pet.add_data("Age", (cursor.getString(2)));
-        
+        Log.d("searchPet: ","Result Query: " + pet.get_data("Id"));
         cursor.close();
         db.close();
-        // return contact
         return pet;
     }
 
-    public Services getService(int id) {
+    public Services getService(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
  
         String query = "SELECT * FROM Services WHERE Service_id = " + id + ";";
@@ -150,7 +142,8 @@ public class ModelHandler extends SQLiteOpenHelper {
  
         Services service = new Services();
         service.add_data("Id", (cursor.getString(0)));
-        service.add_data("Date", (cursor.getString(1)));
+        service.add_data("Pet_Id", (cursor.getString(1)));
+        service.add_data("Service_Date", (cursor.getString(2)));
         
         cursor.close();
         db.close();
@@ -165,22 +158,18 @@ public class ModelHandler extends SQLiteOpenHelper {
     	String query = null;
     	
     	Log.d("searchUser: ","init");
-    	query = "SELECT * FROM Users ";
-    	//validate if all values are null
-    	if ( user.get_data("Name") != null || user.get_data("Address") != null || user.get_data("Phone") != null || user.get_data("Email") != null ) {
-    		query = query + "WHERE ";
-    	}
+    	query = "SELECT * FROM Users WHERE 1=1";
     	if ( user.get_data("Name") != null ) {
-    		query = query + "User_name like '%" + user.get_data("Name") + "%' ";
+    		query = query + " AND User_name like '%" + user.get_data("Name") + "%' ";
     	}
     	if ( user.get_data("Address") != null ) {
-    		query = query + "AND User_address like '%" + user.get_data("Address") + "%' ";
+    		query = query + " AND User_address like '%" + user.get_data("Address") + "%' ";
     	}
     	if ( user.get_data("Phone") != null ) {
-    		query = query + "AND User_phone like '%" + user.get_data("Phone") + "%' ";
+    		query = query + " AND User_phone like '%" + user.get_data("Phone") + "%' ";
     	}
     	if ( user.get_data("Email") != null ) {
-    		query = query + "AND User_email like '%" + user.get_data("Email") + "%' ";
+    		query = query + " AND User_email like '%" + user.get_data("Email") + "%' ";
     	}
     	query = query + ";";
     	Log.d("searchUser: ","Query: " + query);
@@ -253,16 +242,16 @@ public class ModelHandler extends SQLiteOpenHelper {
     	String query = null;
     	
     	Log.d("searchService: ","init");
-    	query = "SELECT * FROM Services ";
-    	//validate if all values are null
-    	if ( service.get_data("Alias") != null || service.get_data("Age") != null ) {
-    		query = query + "WHERE ";
-    	}
+        if ( service.get_data("Pet_id") == null ) {
+            query = "SELECT * FROM Services WHERE 1=1";
+        } else {
+            query = "SELECT * FROM Services WHERE 1=1 AND Pet_id = " + service.get_data("Pet_id");
+        }
     	if ( service.get_data("Alias") != null ) {
-    		query = query + "Service_alias like '%" + service.get_data("Alias") + "%' ";
+    		query = query + " AND Service_alias like '%" + service.get_data("Alias") + "%' ";
     	}
     	if ( service.get_data("Age") != null ) {
-    		query = query + "AND Service_age like '%" + service.get_data("Age") + "%' ";
+    		query = query + " AND Service_age like '%" + service.get_data("Age") + "%' ";
     	}
     	query = query + ";";
     	Log.d("searchService: ","Query: " + query);
@@ -271,16 +260,14 @@ public class ModelHandler extends SQLiteOpenHelper {
             do {
                 Services servicetemp = new Services();
                 servicetemp.add_data("Id",cursor.getString(0));
-                servicetemp.add_data("Alias",cursor.getString(1));
-                servicetemp.add_data("Age",cursor.getString(2));
-                // Adding contact to list
+                servicetemp.add_data("Pet_Id",cursor.getString(1));
+                servicetemp.add_data("Service_Date",cursor.getString(2));
                 serviceList.add(servicetemp);
+                Log.d("searchService: ","Adding Services results to the list: " + cursor.getString(0) + cursor.getString(1) + cursor.getString(2));
             } while (cursor.moveToNext());
         }
         cursor.close();
         db.close();
-        // return list   	
-    	
     	Log.d("searchService: ","Return: " + serviceList);
     	return serviceList;
     }

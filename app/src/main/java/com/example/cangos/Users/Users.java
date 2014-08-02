@@ -1,11 +1,7 @@
 package com.example.cangos.Users;
 
-import com.example.cangos.Common.ModelHandler;
-
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import android.content.Context;
 
 public class Users {
 

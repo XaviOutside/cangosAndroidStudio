@@ -14,7 +14,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_toLeftOf="@+id/adduserbutton"
-        android:hint="Search pets..."
+        android:hint="@string/hintsearchpet"
         android:inputType="textVisiblePassword" />
   
     <!-- List View -->

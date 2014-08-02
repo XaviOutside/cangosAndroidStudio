@@ -22,5 +22,10 @@
     <string name="RacePetString">Raza Mascota</string>
     <string name="WeightPetString">Peso Mascota</string>
     <string name="title_activity_list_services">Listado Servicios</string>
-    <string name="title_activity_main_services">Añadir Mascotas</string>
+    <string name="title_activity_main_services">Añadir Servicios</string>
+    <string name="hintaddservices">Insert service date...</string>
+    <string name="hintaddpets">Insert pet...</string>
+    <string name="hintsearhuser">Search user...</string>
+    <string name="hintsearchservices">Search Service...</string>
+    <string name="hintsearchpet">Search pet...</string>
 </resources>

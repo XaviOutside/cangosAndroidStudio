@@ -1,13 +1,7 @@
-/* 
- * Version 1
- */
 package com.example.cangos.Services;
 
-import com.example.cangos.Common.ModelHandler;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import android.content.Context;
 
 public class Services {
 

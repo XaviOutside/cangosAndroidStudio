@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:hint="Search pets..."
+        android:hint="@string/hintsearchservices"
         android:inputType="textVisiblePassword"
         android:layout_alignBottom="@+id/addservicebutton"
         android:layout_toLeftOf="@+id/addservicebutton" />

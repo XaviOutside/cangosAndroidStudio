@@ -80,7 +80,7 @@ public class ListServices extends Activity {
         items = new String[this.services.size()];
 
         for (int i=0; i< this.services.size(); i++) {
-            items[i] = this.services.get(i).get_data("") + " " + this.services.get(i).get_data("");
+            items[i] = this.services.get(i).get_data("Service_Date") + " " + this.services.get(i).get_data("Pet_Id");
         }
 
         return items;
@@ -95,7 +95,8 @@ public class ListServices extends Activity {
                                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                                 Log.d("setOnItemClickListener: ", "init");
                                                 Intent MService = new Intent(ListServices.this, MainServices.class);
-                                                MService.putExtra("PetId", services.get(position).get_data("Id"));
+                                                MService.putExtra("ServiceId", services.get(position).get_data("Id"));
+                                                MService.putExtra("PetId", services.get(position).get_data("Pet_Id"));
                                                 Log.d("setOnItemClickListener: ","return"+ services.get(position).get_data("Id"));
                                                 ListServices.this.startActivity(MService);
                                             }
