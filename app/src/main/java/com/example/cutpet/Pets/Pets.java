@@ -1,4 +1,4 @@
-package com.example.cangos.Pets;
+package com.example.cutpet.Pets;
 
 import java.util.HashMap;
 import java.util.Map;

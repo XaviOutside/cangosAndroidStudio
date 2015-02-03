@@ -1,4 +1,4 @@
-package com.example.cangos.Users;
+package com.example.cutpet.Users;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -9,9 +9,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
-import com.example.cangos.Main.MainCangos;
-import com.example.cangos.Common.ModelHandler;
-import com.example.cangos.R;
+import com.example.cutpet.Common.ModelHandler;
+import com.example.cutpet.R;
 
 public class MainUsers extends Activity {
 

@@ -1,4 +1,4 @@
-package com.example.cangos.Common;
+package com.example.cutpet.Common;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,9 +8,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-import com.example.cangos.Pets.Pets;
-import com.example.cangos.Services.Services;
-import com.example.cangos.Users.Users;
+import com.example.cutpet.Pets.Pets;
+import com.example.cutpet.Services.Services;
+import com.example.cutpet.Users.Users;
 
 public class ModelHandler extends SQLiteOpenHelper {
 

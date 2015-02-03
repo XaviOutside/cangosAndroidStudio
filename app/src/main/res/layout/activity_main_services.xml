@@ -8,9 +8,9 @@
         android:layout_height="wrap_content"
         android:contentDescription="@string/ok"
         android:src="@drawable/ic_action_user_add"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignLeft="@+id/cleanfields"
+        android:layout_alignStart="@+id/cleanfields"
+        android:layout_alignParentTop="true" />
 
     <ImageButton
         android:id="@+id/cleanfields"
@@ -20,18 +20,174 @@
         android:src="@drawable/ic_action_refresh"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="59dp" />
 
-    <EditText
-        android:id="@+id/ServiceDateField"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPostalAddress"
-        android:hint="@string/hintaddservices"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/cleanfields"
         android:layout_alignParentLeft="true"
-        />
+        android:layout_alignParentStart="true"
+        android:focusable="false"
+        android:padding="@dimen/Padding"
+        android:id="@+id/linearLayout"
+        android:showDividers="beginning"
+        android:scrollbars="vertical|horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/group_checkbox_1"
+            android:id="@+id/textView" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical|horizontal">
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/washing"
+                android:id="@+id/washingcheckbox"
+                android:layout_below="@+id/ServiceDateField"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/desparasitar"
+                android:id="@+id/checkBox2" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/acondicioner"
+                android:id="@+id/checkBox3" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/group_checkbox_2"
+            android:id="@+id/textView2"
+            android:scrollHorizontally="false" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:scrollbarAlwaysDrawHorizontalTrack="false"
+            android:scrollbars="vertical|horizontal">
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/stripping"
+                android:id="@+id/checkBox4"
+                android:layout_gravity="center_horizontal" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/arreglos_stripping"
+                android:id="@+id/checkBox5" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/scissors"
+                android:id="@+id/checkBox6" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/mechanical_cut"
+                android:id="@+id/checkBox7" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/arreglos"
+                android:id="@+id/checkBox8" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/anexos"
+                android:id="@+id/checkBox9" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/nusos"
+                android:id="@+id/checkBox10" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/muda"
+                android:id="@+id/checkBox11" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/group_checkbox_3"
+            android:id="@+id/textView3" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:scrollbars="vertical|horizontal">
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/mouth_clean"
+                android:id="@+id/checkBox12" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/nails"
+                android:id="@+id/checkBox13" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/buidat_glandules"
+                android:id="@+id/checkBox14" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/anals"
+                android:id="@+id/checkBox15" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/higiene_auricular"
+                android:id="@+id/checkBox17" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/colone"
+                android:id="@+id/checkBox16" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </RelativeLayout>

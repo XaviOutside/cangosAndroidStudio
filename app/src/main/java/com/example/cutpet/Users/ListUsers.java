@@ -1,4 +1,4 @@
-package com.example.cangos.Users;
+package com.example.cutpet.Users;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -14,9 +14,9 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
-import com.example.cangos.Common.ModelHandler;
-import com.example.cangos.Pets.ListPets;
-import com.example.cangos.R;
+import com.example.cutpet.Common.ModelHandler;
+import com.example.cutpet.Pets.ListPets;
+import com.example.cutpet.R;
 import java.util.List;
 
 public class ListUsers extends Activity {

@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPostalAddress"
+        android:inputType="textCapWords"
         android:hint="@string/MainPetsField1"
         android:layout_below="@+id/addbutton"
         android:layout_alignParentLeft="true"
@@ -24,11 +24,11 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/RacePetString"
-        android:inputType="textEmailAddress"
         android:singleLine="true"
+        android:inputType="text"
         android:layout_below="@+id/WeightPetField"
-        android:layout_alignRight="@+id/cleanfields"
-        android:layout_alignEnd="@+id/cleanfields" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <ImageButton
         android:id="@+id/addbutton"
@@ -54,7 +54,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPostalAddress"
+        android:inputType="number|textPostalAddress"
         android:hint="@string/MainPetsField2"
         android:layout_below="@+id/NamePetField"
         android:layout_alignParentLeft="true"
@@ -65,10 +65,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPostalAddress"
         android:hint="@string/WeightPetString"
         android:layout_below="@+id/AgePetField"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/ObservationsPetField"
+        android:layout_below="@+id/RacePetField"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:hint="@string/observations" />
 
 </RelativeLayout>

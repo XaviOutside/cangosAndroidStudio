@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">cangos</string>
+    <string name="app_name">cutpet</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_main_cangos">Listado Usuarios</string>
     <string name="title_activity_main_users">Añadir Usuario</string>
@@ -28,4 +28,25 @@
     <string name="hintsearhuser">Search user...</string>
     <string name="hintsearchservices">Search Service...</string>
     <string name="hintsearchpet">Search pet...</string>
+    <string name="stripping">Stripping</string>
+    <string name="scissors">Tall a tisora</string>
+    <string name="mechanical_cut">Tall a màquina</string>
+    <string name="arreglos">Arreglos</string>
+    <string name="anexos">Anexos</string>
+    <string name="nusos">Nusos (suplement)</string>
+    <string name="muda">Muda</string>
+    <string name="arreglos_stripping">Arreglos de Stripping</string>
+    <string name="washing">Rentat</string>
+    <string name="desparasitar">Desparasitar</string>
+    <string name="acondicioner">Acondicionador</string>
+    <string name="mouth_clean">Higiene Bucal</string>
+    <string name="nails">Tall d\'ungles</string>
+    <string name="buidat_glandules">Buidat de Glandules</string>
+    <string name="anals">Anals</string>
+    <string name="colone">Colonia</string>
+    <string name="higiene_auricular">Higiene Auricular</string>
+    <string name="group_checkbox_1">Grupo 1</string>
+    <string name="group_checkbox_2">Grupo 2</string>
+    <string name="group_checkbox_3">Grupo 3</string>
+    <string name="observations">Observaciones</string>
 </resources>

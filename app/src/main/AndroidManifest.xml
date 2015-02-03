@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.cangos"
+    package="com.example.cutpet"
     android:versionCode="8"
     android:versionName="1.0" >
 
@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".Main.MainCangos"
+            android:name="com.example.cutpet.Main.MainCangos"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,32 +17,32 @@
         </activity>
         
         <activity
-            android:name=".Users.MainUsers"
+            android:name="com.example.cutpet.Users.MainUsers"
             android:label="@string/title_activity_main_users" >
         </activity>
 
         <activity
-            android:name=".Users.ListUsers"
+            android:name="com.example.cutpet.Users.ListUsers"
             android:label="@string/title_activity_main_users" >
         </activity>
 
         <activity 
-            android:name=".Pets.MainPets"
+            android:name="com.example.cutpet.Pets.MainPets"
             android:label="@string/title_activity_main_pets">
         </activity>
 
         <activity
-            android:name=".Pets.ListPets"
+            android:name="com.example.cutpet.Pets.ListPets"
             android:label="@string/title_activity_list_pets">
         </activity>
 
         <activity
-            android:name=".Services.MainServices"
+            android:name="com.example.cutpet.Services.MainServices"
             android:label="@string/title_activity_main_services">
         </activity>
 
         <activity
-            android:name=".Services.ListServices"
+            android:name="com.example.cutpet.Services.ListServices"
             android:label="@string/title_activity_list_services">
         </activity>
     </application>

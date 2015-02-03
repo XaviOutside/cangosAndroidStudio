@@ -1,11 +1,11 @@
-package com.example.cangos.Main;
+package com.example.cutpet.Main;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.cangos.R;
-import com.example.cangos.Users.ListUsers;
+import com.example.cutpet.R;
+import com.example.cutpet.Users.ListUsers;
 
 public class MainCangos extends Activity {
 

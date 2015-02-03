@@ -1,4 +1,4 @@
-package com.example.cangos.Services;
+package com.example.cutpet.Services;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -14,8 +14,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
-import com.example.cangos.Common.ModelHandler;
-import com.example.cangos.R;
+import com.example.cutpet.Common.ModelHandler;
+import com.example.cutpet.R;
 import java.util.List;
 
 public class ListServices extends Activity {

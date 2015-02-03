@@ -1,4 +1,4 @@
-package com.example.cangos.Services;
+package com.example.cutpet.Services;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -8,9 +8,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import com.example.cangos.Common.ModelHandler;
-import com.example.cangos.R;
-import com.example.cangos.Pets.Pets;
+import com.example.cutpet.Common.ModelHandler;
+import com.example.cutpet.R;
 
 public class MainServices extends Activity {
 
